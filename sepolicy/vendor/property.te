@@ -1,5 +1,5 @@
-# camera
-type camera_prop, property_type;
+
 # NFC
 type vendor_nfc_prop, property_type;
 
+vendor_internal_prop(camera_prop)
