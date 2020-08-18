@@ -1,2 +1,2 @@
 # camera
-type camera_prop, property_type;
+vendor_internal_prop(camera_prop)
