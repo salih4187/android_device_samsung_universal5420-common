@@ -96,6 +96,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# ConfigStore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
+
 # Graphics
 PRODUCT_PACKAGES += \
     libion \
