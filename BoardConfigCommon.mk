@@ -32,6 +32,7 @@ BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
 # Binder
 TARGET_USES_64_BIT_BINDER := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
