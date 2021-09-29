@@ -62,6 +62,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hdcp2.rx=tz
 
+## SoC
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.soc.manufacturer=Samsung \
+    ro.soc.model=Exynos5420
+
 # System
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.binary_xml=false
