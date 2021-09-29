@@ -62,3 +62,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.direct.interface=p2p0
+
+
+
+## SoC
+ro.soc.manufacturer=Samsung
+ro.soc.model=Exynos5420
+
