@@ -63,6 +63,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.direct.interface=p2p0
 
+# System
+persist.sys.binary_xml=false
 
 
 ## SoC
