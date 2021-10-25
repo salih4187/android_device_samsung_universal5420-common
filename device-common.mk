@@ -258,6 +258,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so
 
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
+
+
 # Wifi
 PRODUCT_PACKAGES += \
     wifiloader \
