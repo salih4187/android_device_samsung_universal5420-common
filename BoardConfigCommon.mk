@@ -42,10 +42,6 @@ BOARD_BLUEDROID_VENDOR_CONF := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
 # Camera
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
-# Wifi
-PRODUCT_PACKAGES += \
-    macloader
-
 # CPU
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
