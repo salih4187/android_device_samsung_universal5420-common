@@ -6,6 +6,8 @@
 /(vendor|system/vendor)/bin/gpsd              u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/vcsFPService      u:object_r:vcsFPService_exec:s0
 /(vendor|system/vendor)/bin/wifiloader        u:object_r:wifiloader_exec:s0
+/(vendor|system/vendor)/bin/modemloader      u:object_r:modemloader_exec:s0
+/(system|system)/bin/sensorhubservice  u:object_r:sensorhubservice_exec:s0
 
 ####################################
 # Data Files
@@ -84,6 +86,13 @@
 # Cgroup
 /dev/stune(/.*)?             u:object_r:cgroup:s0
 /dev/cpuset(/.*)?    u:object_r:cgroup:s0
+
+# nfc
+/dev/bcm2079x                u:object_r:nfc_device:s0
+/dev/sec-nfc                 u:object_r:nfc_device:s0
+
+# data files
+/data/nfc(/.*)?              u:object_r:nfc_data_file:s0
 
 # GPU
 /dev/mali[0-9]*          u:object_r:gpu_device:s0
@@ -296,3 +305,6 @@
 # ZRAM
 /sys/devices/virtual/block/zram0/disksize    u:object_r:sysfs_zram:s0
 /sys/devices/virtual/block/zram0/max_comp_streams    u:object_r:sysfs_zram:s0
+
+# samsung properties
+/(vendor|system/vendor)/bin/hw/sec\.android\.hardware\.nfc@1\.2-service
