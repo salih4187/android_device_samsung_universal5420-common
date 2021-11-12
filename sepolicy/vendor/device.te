@@ -31,3 +31,4 @@ type rfkill_device, dev_type;
 
 # Secure
 type secmem_device, dev_type;
+type sensor_device, dev_type;

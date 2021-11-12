@@ -10,6 +10,8 @@ type security_data_file, file_type, data_file_type;
 type sensors_data_file, file_type, data_file_type;
 type vcs_data_file, file_type, data_file_type;
 
+type sensorhub_dev, dev_type;
+
 # debug types
 type debugfs_clock, fs_type, debugfs_type;
 type debugfs_ion, fs_type, debugfs_type;
@@ -60,3 +62,5 @@ type sysfs_rndis, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_sensor, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_v4l, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_vibrator_writable, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_sec_led, fs_type, sysfs_type, mlstrustedobject;
+

@@ -6,6 +6,9 @@
 /(vendor|system/vendor)/bin/gpsd              u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/vcsFPService      u:object_r:vcsFPService_exec:s0
 /(vendor|system/vendor)/bin/wifiloader        u:object_r:wifiloader_exec:s0
+/(vendor|system/vendor)/bin/sensorhubservice  u:object_r:sensorhubservice_exec:s0
+/(vendor|system/vendor)/bin/hw/macloader      u:object_r:macloader_exec:s0
+
 
 ####################################
 # Data Files
@@ -38,9 +41,12 @@
 # Mobicore
 /data/app/mcRegistry    u:object_r:mobicore_data_file:s0
 
+
+
 # NFC
+/dev/bcm2079x								u:object_r:nfc_device:s0
+/data/bcmnfc(/.*)?							u:object_r:nfc_data_file:s0
 /data/nfc(/.*)?     u:object_r:nfc_data_file:s0
-/data/bcmnfc(/.*)?    u:object_r:nfc_data_file:s0
 
 # Radio
 /data/misc/radio(/.*)?         u:object_r:radio_data_file:s0
@@ -74,6 +80,7 @@
 /dev/block/platform/dw_mmc\.0/by-name/TDATA         u:object_r:tdata_block_device:s0
 /dev/block/platform/dw_mmc\.0/by-name/TOMBSTONES    u:object_r:tombstones_block_device:s0
 /dev/block/platform/dw_mmc\.0/by-name/USERDATA      u:object_r:userdata_block_device:s0
+/dev/sec-nfc                                        u:object_r:nfc_device:s0
 
 # Alarm device
 /dev/alarm		u:object_r:alarm_device:s0
@@ -149,6 +156,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.samsung             u:object_r:hal_ir_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.universal5420    u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.sensors@1\.0-service\.exynos5420     u:object_r:hal_sensors_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.nfc@1\.2-service\.samsung               u:object_r:hal_nfc_default_exec:s0
 
 ####################################
 # Root extra symlink
@@ -296,3 +304,6 @@
 # ZRAM
 /sys/devices/virtual/block/zram0/disksize    u:object_r:sysfs_zram:s0
 /sys/devices/virtual/block/zram0/max_comp_streams    u:object_r:sysfs_zram:s0
+
+
+
