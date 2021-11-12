@@ -70,7 +70,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl.exynos5420 \
     android.hardware.camera.provider@2.4-service \
     camera.device@1.0-impl.exynos5420 \
-    camera.universal5420
+    camera.universal5420 \
+    snap
+    
 
 # IR
 PRODUCT_PACKAGES += \
@@ -133,6 +135,10 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.samsung
 
 
+# Livedisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.1-service.universal5420
+    
 # Media
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -229,6 +235,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
+
+# Charger
+PRODUCT_PACKAGES += \
+    libsuspend
+    
+ # FlipFlap
+ PRODUCT_PACKAGES += \
+     FlipFlap
+        
+    
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
