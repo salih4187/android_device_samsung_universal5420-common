@@ -153,10 +153,11 @@ on boot
     write /sys/class/sec/sec_key/wakeup_keys 116,172
 
     # Permissions for TouchScreen
+    chown system system /sys/class/sec/tsp/cmd
     chmod 0660 /sys/class/sec/tsp/cmd
-    chown system radio /sys/class/sec/tsp/cmd_list
+    chown system system /sys/class/sec/tsp/cmd_list
     chmod 0660  /sys/class/sec/tsp/cmd_list
-    chown system radio /sys/class/sec/tsp/cmd_result
+    chown system system /sys/class/sec/tsp/cmd_result
     chmod 0660 /sys/class/sec/tsp/cmd_result
 	chown system system /sys/class/sec/tsp/input/enabled
 	chmod 0660 /sys/class/sec/tsp/input/enabled
@@ -179,7 +180,7 @@ on boot
 	chmod 0660 /sys/class/sec/sec_touchkey/input/enabled
 
     # KeyDisabler permission
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_enabled
+    chown system system /sys/class/sec/sec_touchkey/touchkey_enabled
     chmod 0664 /sys/class/sec/sec_touchkey/touchkey_enabled
 
     # GnssConfiguration doesn't actually look at gps.conf, just the debug file
