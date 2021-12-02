@@ -81,13 +81,14 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.0.vendor \
     android.hardware.drm@1.3-service.clearkey
 
 # GNNS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl.universal5420 \
-    android.hardware.gnss@1.0-service.universal5420
+    android.hardware.gnss@1.0-service.universal5420 \
+    android.hardware.gnss@2.1.vendor
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf
@@ -133,7 +134,8 @@ PRODUCT_PACKAGES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
+    android.hardware.keymaster@3.0.vendor \
+    libkeymaster4_1support.vendor
 
 # Lights
 PRODUCT_PACKAGES += \
