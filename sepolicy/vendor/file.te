@@ -9,9 +9,12 @@ type mediadrm_vendor_data_file, file_type, data_file_type;
 type security_data_file, file_type, data_file_type;
 type sensors_data_file, file_type, data_file_type;
 type vcs_data_file, file_type, data_file_type;
-
 type sensorhub_dev, dev_type;
 
+
+# disk_stat
+type sysfs_disk_stat, fs_type, sysfs_type;
+type exported2_default_prop, fs_type, file_type;
 # debug types
 type debugfs_clock, fs_type, debugfs_type;
 type debugfs_ion, fs_type, debugfs_type;

@@ -8,4 +8,5 @@ persist.ril.      u:object_r:radio_prop:s0
 persist.nfc.log.index            u:object_r:vendor_nfc_prop:s0
 vendor.nfc.fw.                   u:object_r:vendor_nfc_prop:s0 
 persist.vendor.nfc.log.index     u:object_r:vendor_nfc_prop:s0
-
+#ro.build.selinux    u:object_r:exported2_default_prop:s0
+#ro.product.system.manufacturer u:object_r:exported2_default_prop:s0

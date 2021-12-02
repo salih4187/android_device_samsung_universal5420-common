@@ -20,3 +20,4 @@ allow system_app sysfs_zram:dir search;
 allow system_app sysfs_zram:file r_file_perms;
 
 allow system_app vcsFPService:process signull;
+set_prop(system_app, exported_system_prop);

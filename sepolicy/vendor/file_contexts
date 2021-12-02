@@ -14,6 +14,8 @@
 # Data Files
 #
 
+
+                          
 # Audit
 /data/misc/audit(/.*)?    u:object_r:audit_data_file:s0
 
@@ -47,9 +49,6 @@
 /dev/bcm2079x								u:object_r:nfc_device:s0
 /data/bcmnfc(/.*)?							u:object_r:nfc_data_file:s0
 /data/nfc(/.*)?     u:object_r:nfc_data_file:s0
-
-# Radio
-/data/misc/radio(/.*)?         u:object_r:radio_data_file:s0
 
 # Security
 /data/security(/.*)?    u:object_r:security_data_file:s0
@@ -190,7 +189,7 @@
 /sys/class/rfkill/rfkill0/type                                  u:object_r:sysfs_bluetooth_writable:s0
 
 # Block/storage
-/sys/devices/platform/dw_mmc\.[0-9]+/mmc_host/mmc[0-9]+/mmc[0-9]+:[a-z0-9]+/block/mmcblk[0-9]+/queue(/.*)?   u:object_r:sysfs_io_sched_tuneable:s0
+#/sys/devices/platform/dw_mmc\.[0-9]+/mmc_host/mmc[0-9]+/mmc[0-9]+:[a-z0-9]+/block/mmcblk[0-9]+/queue(/.*)?   u:object_r:sysfs_io_sched_tuneable:s0
 
 # Button
 /sys/devices/platform/i2c-gpio\.9/i2c-9/9-0060/input/input9(/.*)?        u:object_r:sysfs_homebutton_writable:s0
