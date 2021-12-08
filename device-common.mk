@@ -40,8 +40,8 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     tinymix \
     android.hardware.audio.service \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
