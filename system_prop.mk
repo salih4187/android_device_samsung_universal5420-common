@@ -57,6 +57,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers = 3 \
     debug.sf.disable_backpressure=1 \
     debug.sf.latch_unsignaled=1 \
+    debug.renderengine.backend=threaded \
     ro.opengles.version=196609
 
 # Media
