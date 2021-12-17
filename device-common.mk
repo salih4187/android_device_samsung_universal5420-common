@@ -240,10 +240,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsuspend
     
- # FlipFlap
- PRODUCT_PACKAGES += \
-     FlipFlap
-        
+      
     
 # Vibrator
 PRODUCT_PACKAGES += \
