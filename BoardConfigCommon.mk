@@ -26,6 +26,7 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIOSERVER_MULTILIB := 32
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
+TARGET_AUDIOHAL_VARIANT := samsung
 
 # Backlight
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
