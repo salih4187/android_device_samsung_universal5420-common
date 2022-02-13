@@ -3,7 +3,6 @@
 #
 
 /(vendor|system/vendor)/bin/mcDriverDaemon    u:object_r:tee_exec:s0
-/(vendor|system/vendor)/bin/gpsd              u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/vcsFPService      u:object_r:vcsFPService_exec:s0
 /(vendor|system/vendor)/bin/wifiloader        u:object_r:wifiloader_exec:s0
 
