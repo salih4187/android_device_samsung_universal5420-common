@@ -97,6 +97,7 @@ TARGET_LINUX_KERNEL_VERSION := 3.4
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos5420
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+TARGET_KERNEL_CLANG_COMPILE := false
 
 # Keymaster
 BOARD_USES_TRUST_KEYMASTER := true
