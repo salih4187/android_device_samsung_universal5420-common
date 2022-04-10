@@ -14,9 +14,6 @@
 # Audit
 /data/misc/audit(/.*)?    u:object_r:audit_data_file:s0
 
-# Display
-/data/vendor/display(/.*)?     u:object_r:display_vendor_data_file:s0
-
 # Camera
 /data/vendor/camera(/.*)?         u:object_r:camera_vendor_data_file:s0
 
