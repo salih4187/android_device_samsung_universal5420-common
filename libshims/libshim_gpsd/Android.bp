@@ -1,9 +1,9 @@
 cc_library_shared {
-    name: "libshim_gps",
+    name: "libshim_gpsd",
     proprietary: true,
 
     srcs: [
-	"libshim_gps.cpp",
+	"libshim_gpsd.cpp",
     ],
 
     shared_libs: [
