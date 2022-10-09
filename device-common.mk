@@ -110,9 +110,7 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
+    libhwbinder
 
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
@@ -242,8 +240,6 @@ PRODUCT_PACKAGES += \
     wifiloader \
     hostapd \
     wificond \
-    wifilogd \
-    wlutil \
     libwpa_client \
     wpa_supplicant \
     wpa_supplicant.conf \
