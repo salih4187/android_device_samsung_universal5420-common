@@ -214,6 +214,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshim_camera
 
+# Shims Supercell
+SHIM_SUPERCELL_SDK := true
+ifeq ($(SHIM_SUPERCELL_SDK),true)
+PRODUCT_PACKAGES += \
+    libshim_supercell
+endif
+
 # Touch features
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.samsung
