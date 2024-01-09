@@ -218,6 +218,14 @@ PRODUCT_PACKAGES += \
     libshim_supercell
 endif
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/samsung \
+    hardware/samsung/aidl/power-libperfmgr
+
 # Touch features
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.samsung
