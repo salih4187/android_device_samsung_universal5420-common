@@ -21,6 +21,14 @@ on init
     symlink /dev/block/mmcblk0p8 /dev/block/param
 
 on post-fs-data
+
+    setprop wrap.com.supercell.boombeach "LD_PRELOAD=/system/lib/libshim_supercell.so"
+    setprop wrap.com.supercell.clashofclans "LD_PRELOAD=/system/lib/libshim_supercell.so"
+    setprop wrap.com.supercell.hayday "LD_PRELOAD=/system/lib/libshim_supercell.so"
+    setprop wrap.com.supercell.brawlstars "LD_PRELOAD=/system/lib/libshim_supercell.so"
+    setprop wrap.com.supercell.clashroyale "LD_PRELOAD=/system/lib/libshim_supercell.so"
+
+
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
     chown media_rw media_rw /data/media
