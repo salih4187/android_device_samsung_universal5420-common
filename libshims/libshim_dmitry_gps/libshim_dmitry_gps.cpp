@@ -73,10 +73,10 @@ extern "C" {
   void _ZN7android8String16D1Ev(void **str16P);
 
 //android::SensorManager::~SensorManager()
-  void _ZN7android13SensorManagerD1Ev(void *sensorMgr);
+//  void _ZN7android13SensorManagerD1Ev(void *sensorMgr);
 
 //android::SensorManager::SensorManager(android::String16 const&)
-  void _ZN7android13SensorManagerC1ERKNS_8String16E(void *sensorMgr, void **str16P);
+//  void _ZN7android13SensorManagerC1ERKNS_8String16E(void *sensorMgr, void **str16P);
 
 //android::SensorManager::createEventQueue(android::String8, int)
   void _ZN7android13SensorManager16createEventQueueENS_7String8Ei(void **retVal, void *sensorMgr, void **str8P, int mode);
@@ -143,7 +143,7 @@ void _ZN7android13SensorManagerC1Ev(void *sensorMgr)
     void *string;
 
     _ZN7android8String16C1EPKc(&string, "gps.universal5420");
-    _ZN7android13SensorManagerC1ERKNS_8String16E(sensorMgr, &string);
+/*    _ZN7android13SensorManagerC1ERKNS_8String16E(sensorMgr, &string); */
     _ZN7android8String16D1Ev(&string);
 }
 
@@ -202,7 +202,7 @@ void libEvtUnloading(void)
     ALOGI("Samsung GPS interposition library unloading. Goodbye...");
     if (_ZN7android9SingletonINS_13SensorManagerEE9sInstanceE) {
         //if an instance stil exists, free it by calling the destructor, just to be throrough
-        _ZN7android13SensorManagerD1Ev(_ZN7android9SingletonINS_13SensorManagerEE9sInstanceE);
+        /* _ZN7android13SensorManagerD1Ev(_ZN7android9SingletonINS_13SensorManagerEE9sInstanceE); */
         _ZN7android9SingletonINS_13SensorManagerEE9sInstanceE = NULL;
     }
 }
