@@ -27,9 +27,10 @@ LOCAL_SHARED_LIBRARIES := \
     libhardware \
     liblog \
     libcamera_client \
-    libgui \
+    libgui_vendor \
     libhidlbase \
-    libsensor \
+    libsensor_vendor \
+    libui \
     libutils \
     android.hidl.token@1.0-utils
 
@@ -42,7 +43,8 @@ LOCAL_CFLAGS += -DGAIA_FW_BETA
 
 LOCAL_C_INCLUDES += \
     system/media/camera/include \
-    framworks/av/include/camera
+    framworks/av/include/camera \
+    frameworks/native/headers/media_plugin
 
 LOCAL_SRC_FILES:= \
     ExynosCameraHWImpl.cpp
@@ -67,7 +69,8 @@ LOCAL_MODULE_RELATIVE_PATH := hw
 
 LOCAL_C_INCLUDES += \
     system/media/camera/include \
-    framworks/av/include/camera
+    framworks/av/include/camera \
+    frameworks/native/headers/media_plugin
 
 LOCAL_SRC_FILES := \
     ExynosCameraHWInterface.cpp
@@ -79,9 +82,10 @@ LOCAL_SHARED_LIBRARIES := \
     libhardware \
     liblog \
     libcamera_client \
-    libgui \
+    libgui_vendor \
     libhidlbase \
-    libsensor \
+    libsensor_vendor \
+    libui \
     libutils \
     android.hidl.token@1.0-utils
 

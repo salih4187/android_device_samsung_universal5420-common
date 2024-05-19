@@ -636,7 +636,7 @@ char *HAL_camera_device_get_parameters(struct camera_device *dev)
     String8 str;
     CameraParameters parms = obj(dev)->getParameters();
     str = parms.flatten();
-    return strdup(str.string());
+    return strdup(str.c_str());
 }
 
 void HAL_camera_device_put_parameters(struct camera_device *dev, char *parms)
