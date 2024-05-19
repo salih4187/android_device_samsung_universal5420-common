@@ -1,6 +1,11 @@
 cc_library_static {
     name: "multihal-exynos5420",
     vendor: true,
+
+    include_dirs: [
+        "hardware/libhardware/include",
+    ],
+
     srcs: [
         "multihal.cpp",
         "SensorEventQueue.cpp",
