@@ -9,9 +9,9 @@ cc_library_shared {
     shared_libs: [
 	"liblog",
         "libcutils",
-	"libgui",
+	"libgui_vendor",
         "libbinder",
 	"libutils",
-        "libsensor",
+        "libsensor_vendor",
     ],
 }

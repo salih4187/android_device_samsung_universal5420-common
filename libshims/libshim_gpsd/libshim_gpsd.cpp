@@ -18,7 +18,13 @@ namespace android {
     extern "C" void _ZN7android8String16aSEOS0_();
     extern "C" void _ZN7android8String16aSEOS0_(){}
     extern "C" void _ZN7android8String16C1EOS0_();
-    extern "C" void _ZN7android8String16C1EOS0_(){}
+    extern "C" void _ZN7android8String16C1EOS0_(){};
+    extern "C" void _ZNK7android16SensorEventQueue5getFdEv();
+    extern "C" void _ZNK7android16SensorEventQueue5getFdEv(){};
+    extern "C" void _ZN7android13SensorManagerD1Ev();
+    extern "C" void _ZN7android13SensorManagerD1Ev(){};
+    extern "C" void _ZN7android13SensorManagerC1ERKNS_8String16E();
+    extern "C" void _ZN7android13SensorManagerC1ERKNS_8String16E(){};
 
     extern "C" { long (*SSL_CTX_ctrl)(void *ctx, int cmd, long larg, void *parg); }
 
