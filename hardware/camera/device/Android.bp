@@ -27,6 +27,7 @@ cc_library_shared {
         "libbinder",
         "libbase",
         "libion",
+        "libui",
     ],
     static_libs: [
         "android.hardware.camera.common@1.0-helper"
@@ -35,7 +36,8 @@ cc_library_shared {
         "frameworks/native/include/media/openmax",
         "frameworks/native/libs/binder/include",
         "system/memory/libion/include",
-        "device/samsung/universal5420-common/hardware/camera/device/include"
+        "device/samsung/universal5420-common/hardware/camera/device/include",
+        "frameworks/native/headers/media_plugin",
     ],
     export_include_dirs: ["."],
     header_libs: [
