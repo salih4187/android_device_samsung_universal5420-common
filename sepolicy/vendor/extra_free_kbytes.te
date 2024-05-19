@@ -1,0 +1,3 @@
+#============= extra_free_kbytes ==============
+allow extra_free_kbytes same_process_hal_file:file r_file_perms;
+allow extra_free_kbytes vendor_file:file r_file_perms;

@@ -1,0 +1,2 @@
+#============= recovery_persist ==============
+allow recovery_persist vendor_file:file r_file_perms;

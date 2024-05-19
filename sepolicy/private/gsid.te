@@ -1,0 +1,3 @@
+#============= gsid ==============
+allow gsid same_process_hal_file:file r_file_perms;
+allow gsid vendor_file:file r_file_perms;

@@ -1,0 +1,4 @@
+#============= storaged ==============
+allow storaged same_process_hal_file:file r_file_perms;
+allow storaged sysfs:file r_file_perms;
+allow storaged vendor_file:file r_file_perms;

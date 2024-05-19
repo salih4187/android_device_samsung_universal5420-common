@@ -1,0 +1,3 @@
+#============= linkerconfig ==============
+allow linkerconfig same_process_hal_file:file r_file_perms;
+allow linkerconfig vendor_file:file r_file_perms;

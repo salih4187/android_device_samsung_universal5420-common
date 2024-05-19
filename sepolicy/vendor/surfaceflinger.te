@@ -13,3 +13,7 @@ allow surfaceflinger {
     sysfs_mmu
     sysfs_v4l
 }:file r_file_perms;
+
+allow surfaceflinger vendor_default_prop:file r_file_perms;
+allow surfaceflinger vendor_file:file rx_file_perms;
+allow surfaceflinger vendor_hwc_prop:file r_file_perms;

@@ -1,0 +1,2 @@
+#============= gpuservice ==============
+allow gpuservice vendor_file:file r_file_perms;

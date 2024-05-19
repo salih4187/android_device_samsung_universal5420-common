@@ -1,0 +1,3 @@
+#============= vdc ==============
+allow vdc same_process_hal_file:file getattr;
+allow vdc vendor_file:file getattr;

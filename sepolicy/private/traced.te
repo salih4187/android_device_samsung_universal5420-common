@@ -1,0 +1,2 @@
+#============= traced ==============
+allow traced vendor_file:file r_file_perms;

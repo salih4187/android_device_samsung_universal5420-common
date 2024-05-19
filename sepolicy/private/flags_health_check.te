@@ -1,0 +1,2 @@
+#============= flags_health_check ==============
+allow flags_health_check vendor_file:file r_file_perms;

@@ -1,3 +1,7 @@
+# Kanged from https://github.com/LineageOS/android_device_samsung_universal7580-common/blob/lineage-18.1/sepolicy/gpsd.te
+
+init_daemon_domain(gpsd)
+
 # gpsd.te
 
 allow gpsd system_data_file:dir create_dir_perms;
@@ -18,3 +22,10 @@ allow gpsd sensorservice_service:service_manager find;
 allow gpsd system_server:unix_stream_socket rw_socket_perms;
 
 binder_call(gpsd, servicemanager)
+
+allow gpsd hal_system_suspend_service:service_manager find;
+allow gpsd shell_exec:file execute;
+allow gpsd system_data_file:dir r_dir_perms;
+allow gpsd system_data_file:dir search;
+allow gpsd system_file:file r_file_perms;
+allow gpsd sysfs:file rw_file_perms;

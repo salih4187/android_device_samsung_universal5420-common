@@ -1,0 +1,2 @@
+#============= idmap ==============
+allow idmap vendor_file:file r_file_perms;

@@ -1,0 +1,2 @@
+#============= mediametrics ==============
+allow mediametrics vendor_file:file r_file_perms;

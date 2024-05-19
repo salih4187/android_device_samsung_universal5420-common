@@ -36,3 +36,13 @@ allow vendor_init {
 allow vendor_init wifi_data_file:file create_file_perms;
 
 allow vendor_init proc_vm:file w_file_perms;
+
+allow vendor_init apexd_prop:file r_file_perms;
+
+allow vendor_init unlabeled:dir search;
+
+allow vendor_init system_prop:property_service set;
+
+allow vendor_init default_prop:property_service set;
+allow vendor_init init_service_status_prop:property_service set;
+allow vendor_init media_userdir_file:dir { getattr setattr };

@@ -1,3 +1,4 @@
 # mediaserver.te
 
 binder_call(mediaserver, hal_camera_default)
+allow mediaserver vendor_file:file r_file_perms;

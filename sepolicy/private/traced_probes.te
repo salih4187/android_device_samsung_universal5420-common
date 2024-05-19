@@ -1,0 +1,2 @@
+#============= traced_probes ==============
+allow traced_probes vendor_file:file r_file_perms;

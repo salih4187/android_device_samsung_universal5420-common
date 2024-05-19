@@ -1,0 +1,4 @@
+#============= idmap ==============
+allow idmap gpsd_exec:file r_file_perms;
+allow idmap same_process_hal_file:file r_file_perms;
+allow idmap vendor_file:file r_file_perms;

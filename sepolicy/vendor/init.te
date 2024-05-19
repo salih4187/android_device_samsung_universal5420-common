@@ -32,3 +32,11 @@ allow init sysfs_input:lnk_file read;
 allow init tmpfs:lnk_file create;
 
 allow init socket_device:sock_file create_file_perms;
+
+allow init audio_device:chr_file { ioctl open read write };
+allow init hal_system_suspend_service:service_manager find;
+# allow init system_suspend:binder call;
+allow init vndbinder_device:chr_file ioctl;
+
+allow init shell_exec:file execute_no_trans;
+allow init sysfs:file rw_file_perms;

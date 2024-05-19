@@ -1,0 +1,3 @@
+#============= logd ==============
+allow logd same_process_hal_file:file r_file_perms;
+allow logd vendor_file:file r_file_perms;

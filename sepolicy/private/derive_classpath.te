@@ -1,0 +1,3 @@
+#============= derive_classpath ==============
+allow derive_classpath same_process_hal_file:file r_file_perms;
+allow derive_classpath vendor_file:file r_file_perms;

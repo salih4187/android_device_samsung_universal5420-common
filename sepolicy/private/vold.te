@@ -1,0 +1,3 @@
+#============= vold ==============
+allow vold same_process_hal_file:file r_file_perms;
+allow vold vendor_file:file r_file_perms;

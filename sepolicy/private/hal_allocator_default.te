@@ -1,0 +1,3 @@
+#============= hal_allocator_default ==============
+allow hal_allocator_default same_process_hal_file:file r_file_perms;
+allow hal_allocator_default vendor_file:file r_file_perms;

@@ -1,0 +1,2 @@
+#============= bpfloader ==============
+allow bpfloader vendor_file:file r_file_perms;

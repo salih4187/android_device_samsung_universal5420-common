@@ -1,7 +1,8 @@
 ####################################
 # Daemons
 #
-
+/(vendor|system/vendor)/etc/loggy.sh 		  u:object_r:shell_exec:s0
+/(vendor|system/vendor)/bin/gpsd              u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/vcsFPService      u:object_r:vcsFPService_exec:s0
 /(vendor|system/vendor)/bin/wifiloader        u:object_r:wifiloader_exec:s0
 
@@ -134,6 +135,7 @@
 # HIDL
 #
 
+/(vendor|system/vendor)/bin/hw/android\.hardware\.audio\.service\.exynos5                u:object_r:hal_audio_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software			u:object_r:hal_gatekeeper_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service\.universal5420     u:object_r:hal_gnss_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.samsung             u:object_r:hal_ir_default_exec:s0

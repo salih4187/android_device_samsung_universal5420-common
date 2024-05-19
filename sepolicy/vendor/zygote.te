@@ -5,3 +5,7 @@ allow system_server app_zygote:process getpgid;
 dontaudit zygote proc_cmdline:file r_file_perms;
 
 get_prop(zygote, exported_camera_prop)
+
+#============= zygote ==============
+allow zygote device:dir w_dir_perms;
+allow zygote vendor_file:file rx_file_perms;

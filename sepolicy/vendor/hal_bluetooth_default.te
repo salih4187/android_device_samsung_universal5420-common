@@ -6,3 +6,5 @@ allow hal_bluetooth_default efs_file:file r_file_perms;
 
 allow hal_bluetooth_default bluetooth_data_file:dir r_dir_perms;
 allow hal_bluetooth_default bluetooth_data_file:file r_file_perms;
+
+allow hal_bluetooth_default system_file:file r_file_perms;

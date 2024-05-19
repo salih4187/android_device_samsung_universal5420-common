@@ -1,0 +1,3 @@
+#============= tombstoned ==============
+allow tombstoned same_process_hal_file:file r_file_perms;
+allow tombstoned vendor_file:file r_file_perms;

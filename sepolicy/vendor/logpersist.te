@@ -1,0 +1,6 @@
+#============= logpersist ==============
+allow logpersist cache_file:dir { add_name open read write };
+allow logpersist cache_file:file { append create getattr ioctl open };
+allow logpersist same_process_hal_file:file r_file_perms;
+allow logpersist self:capability dac_override;
+allow logpersist vendor_file:file r_file_perms;
