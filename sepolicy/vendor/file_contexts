@@ -2,8 +2,7 @@
 # Daemons
 #
 
-/(vendor|system/vendor)/bin/mcDriverDaemon    u:object_r:tee_exec:s0
-/(vendor|system/vendor)/bin/gpsd              u:object_r:gpsd_exec:s0
+/(vendor|system/vendor)/bin/hw/gpsd           u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/vcsFPService      u:object_r:vcsFPService_exec:s0
 /(vendor|system/vendor)/bin/wifiloader        u:object_r:wifiloader_exec:s0
 /(vendor|system/vendor)/bin/sensorhubservice  u:object_r:sensorhubservice_exec:s0
@@ -14,13 +13,8 @@
 # Data Files
 #
 
-
-                          
 # Audit
 /data/misc/audit(/.*)?    u:object_r:audit_data_file:s0
-
-# Display
-/data/vendor/display(/.*)?     u:object_r:display_vendor_data_file:s0
 
 # Camera
 /data/vendor/camera(/.*)?         u:object_r:camera_vendor_data_file:s0
@@ -139,7 +133,6 @@
 /efs/drm(/.*)?               u:object_r:drm_efs_file:s0
 /efs/gyro_cal_data           u:object_r:sensor_efs_file:s0
 /efs/h2k\.dat                u:object_r:cpk_efs_file:s0
-/efs/nv_data.bin(.*)         u:object_r:bin_nv_data_efs_file:s0
 /efs/nv\.log                 u:object_r:bin_nv_data_efs_file:s0
 /efs/\.nv_core\.bak(.*)      u:object_r:bin_nv_data_efs_file:s0
 /efs/wv\.keys                u:object_r:cpk_efs_file:s0
