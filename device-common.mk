@@ -35,26 +35,21 @@ PRODUCT_COPY_FILES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.universal5420 \
-    audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
     tinymix \
     android.hardware.audio.service \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@6.0-impl:32 \
-    android.hardware.audio@6.0-impl:32 \
-    libaudioroute \
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio.effect@7.0-impl \
     libtinyalsa \
     android.hardware.soundtrigger@2.0-impl:32 \
     libtinycompress
     
-
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(COMMON_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration_7_0.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
@@ -71,8 +66,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     camera.device@1.0-impl.exynos5420 \
     camera.universal5420 \
-    snap
-    
 
 # IR
 PRODUCT_PACKAGES += \
@@ -100,7 +93,6 @@ PRODUCT_PACKAGES += \
 # ConfigStore
 PRODUCT_PACKAGES += \
     disable_configstore
-
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -229,7 +221,6 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     libgutils
 
-
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
@@ -246,8 +237,7 @@ PRODUCT_PACKAGES += \
  # FlipFlap
  PRODUCT_PACKAGES += \
      FlipFlap
-        
-    
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
@@ -258,7 +248,6 @@ PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so
 
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
-
 
 # Wifi
 PRODUCT_PACKAGES += \
