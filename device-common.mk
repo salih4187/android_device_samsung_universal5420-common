@@ -40,10 +40,7 @@ PRODUCT_PACKAGES += \
     tinymix \
     android.hardware.audio.service \
     android.hardware.audio@7.0-impl \
-    android.hardware.audio.effect@7.0-impl \
-    libtinyalsa \
-    android.hardware.soundtrigger@2.0-impl:32 \
-    libtinycompress
+    android.hardware.audio.effect@7.0-impl
     
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
