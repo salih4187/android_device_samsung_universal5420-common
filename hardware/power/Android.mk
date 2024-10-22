@@ -24,6 +24,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/include \
+    device/samsung/$(TARGET_DEVICE)/include \
     hardware/samsung/hidl/light/include
 
 LOCAL_SHARED_LIBRARIES := \
