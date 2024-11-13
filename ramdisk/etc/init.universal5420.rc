@@ -22,11 +22,11 @@ on init
 
 on post-fs-data
 
-    setprop wrap.com.supercell.boombeach "LD_PRELOAD=/system/lib/libshim_supercell.so"
-    setprop wrap.com.supercell.clashofclans "LD_PRELOAD=/system/lib/libshim_supercell.so"
-    setprop wrap.com.supercell.hayday "LD_PRELOAD=/system/lib/libshim_supercell.so"
-    setprop wrap.com.supercell.brawlstars "LD_PRELOAD=/system/lib/libshim_supercell.so"
-    setprop wrap.com.supercell.clashroyale "LD_PRELOAD=/system/lib/libshim_supercell.so"
+    setprop wrap.com.supercell.boombeach "LD_PRELOAD=/system/vendor/lib/libshim_supercell.so"
+    setprop wrap.com.supercell.clashofclans "LD_PRELOAD=/system/vendor/lib/libshim_supercell.so"
+    setprop wrap.com.supercell.hayday "LD_PRELOAD=/system/vendor/lib/libshim_supercell.so"
+    setprop wrap.com.supercell.brawlstars "LD_PRELOAD=/system/vendor/lib/libshim_supercell.so"
+    setprop wrap.com.supercell.clashroyale "LD_PRELOAD=/system/vendor/lib/libshim_supercell.so"
 
 
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
