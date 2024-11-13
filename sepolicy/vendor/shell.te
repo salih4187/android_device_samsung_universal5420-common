@@ -1,3 +1,5 @@
 # shell.te
 
 allow shell bt_device:chr_file rw_file_perms;
+
+allow shell vendor_file:file r_file_perms;

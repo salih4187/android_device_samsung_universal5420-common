@@ -4,3 +4,4 @@ allow hal_audio_default rild:unix_stream_socket connectto;
 
 allow hal_audio_default default_prop:file r_file_perms;
 
+allow hal_audio_default default_android_vndservice:service_manager add;

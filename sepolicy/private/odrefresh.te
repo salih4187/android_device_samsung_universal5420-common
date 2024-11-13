@@ -1,3 +1,4 @@
 #============= odrefresh ==============
 dontaudit odrefresh property_type:file { getattr open read map };
 allow odrefresh same_process_hal_file:file r_file_perms;
+allow odrefresh vendor_file:file r_file_perms;

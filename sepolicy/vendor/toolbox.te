@@ -1,3 +1,12 @@
 # toolbox.te
 
 allow toolbox ram_device:blk_file rw_file_perms;
+
+allow toolbox cache_file:file rw_file_perms ;
+allow toolbox init:fifo_file rw_file_perms;
+allow toolbox kmsg_device:chr_file r_file_perms;
+allow toolbox proc_last_kmsg:file r_file_perms;
+allow toolbox same_process_hal_file:file r_file_perms;
+allow toolbox self:capability dac_override;
+allow toolbox tombstone_data_file:dir getattr;
+allow toolbox vendor_file:file r_file_perms;

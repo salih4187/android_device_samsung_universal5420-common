@@ -1,1 +1,2 @@
 dontaudit flags_health_check property_type:file { getattr open read map };
+allow flags_health_check same_process_hal_file:file r_file_perms;

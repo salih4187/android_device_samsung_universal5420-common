@@ -40,3 +40,10 @@ allow init vndbinder_device:chr_file ioctl;
 
 allow init shell_exec:file execute_no_trans;
 allow init sysfs:file rw_file_perms;
+
+
+allow init app_data_file:dir getattr;
+allow init privapp_data_file:dir getattr;
+allow init seapp_contexts_file:file r_file_perms;
+allow init shell_data_file:dir relabelfrom;
+allow init system_app_data_file:dir getattr;

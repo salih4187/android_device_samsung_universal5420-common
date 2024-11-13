@@ -2,5 +2,7 @@
 
 allow mediacodec debugfs_ion:dir search;
 
+allow mediacodec media_data_file:dir search;
+
 allow mediacodec sysfs_mfc:dir search;
 allow mediacodec sysfs_mfc:file r_file_perms;

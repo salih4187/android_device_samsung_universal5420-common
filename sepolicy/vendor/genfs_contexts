@@ -40,6 +40,9 @@ genfscon proc /sys/vm/lowmem_reserve_ratio      u:object_r:proc_vm:s0
 # Audio sysfs
 genfscon sysfs /devices/virtual/audio/earjack    u:object_r:sysfs_jack:s0
 
+# Battery
+genfscon sysfs /devices/platform/soc/soc:battery/power_supply/battery/batt_slate_mode                       u:object_r:sysfs_battery_writable:s0
+
 # CPU/Scheduler devices
 genfscon sysfs /power/cpufreq_table                       u:object_r:sysfs_power_writable:s0
 genfscon sysfs /module/cpuidle/parameters/off             u:object_r:sysfs_cpuidle_writable:s0

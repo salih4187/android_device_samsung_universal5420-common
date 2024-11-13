@@ -1,0 +1,54 @@
+#============= untrusted_app ==============
+# needed for Supercell games
+
+# allow untrusted_app artd_exec:file r_file_perms;
+# allow untrusted_app init_svc_debug_prop:file r_file_perms;
+# allow untrusted_app system_font_fallback_file:file r_file_perms;
+# allow untrusted_app vendor_boringssl_self_test_exec:file r_file_perms;
+
+allow untrusted_app efs_file:dir r_dir_perms;
+allow untrusted_app hal_wifi_default_exec:file r_file_perms;
+allow untrusted_app postinstall_mnt_dir:dir r_dir_perms;
+
+allow untrusted_app apex_info_file:file r_file_perms;
+allow untrusted_app build_attestation_prop:file r_file_perms;
+allow untrusted_app build_bootimage_prop:file r_file_perms;
+allow untrusted_app cgroup:dir r_dir_perms;
+allow untrusted_app file_contexts_file:file r_file_perms;
+allow untrusted_app hal_audio_default_exec:file r_file_perms;
+allow untrusted_app hal_cas_default_exec:file r_file_perms;
+allow untrusted_app hal_graphics_allocator_default_exec:file r_file_perms;
+allow untrusted_app hal_memtrack_default_exec:file r_file_perms;
+allow untrusted_app hwservice_contexts_file:file r_file_perms;
+allow untrusted_app idmap_exec:file rx_file_perms;
+allow untrusted_app mac_perms_file:file r_file_perms;
+allow untrusted_app mirror_data_file:dir r_dir_perms;
+allow untrusted_app mobicore_vendor_file:dir r_dir_perms;
+allow untrusted_app mobicore_vendor_file:file r_file_perms;
+allow untrusted_app proc_asound:dir r_dir_perms;
+allow untrusted_app proc_max_map_count:file r_file_perms;
+allow untrusted_app proc_net:file r_file_perms;
+allow untrusted_app proc_net_tcp_udp:file r_file_perms;
+allow untrusted_app proc_tty_drivers:file r_file_perms;
+allow untrusted_app qemu_hw_prop:file r_file_perms;
+allow untrusted_app qemu_sf_lcd_density_prop:file r_file_perms;
+allow untrusted_app rootfs:dir r_dir_perms;
+allow untrusted_app rootfs:file r_file_perms;
+allow untrusted_app seapp_contexts_file:file r_file_perms;
+allow untrusted_app selinuxfs:file r_file_perms;
+allow untrusted_app serialno_prop:file r_file_perms;
+allow untrusted_app service_contexts_file:file r_file_perms;
+allow untrusted_app system_bootstrap_lib_file:dir r_dir_perms;
+allow untrusted_app system_dlkm_file:dir r_dir_perms;
+allow untrusted_app tee_exec:file r_file_perms;
+allow untrusted_app unlabeled:dir r_dir_perms;
+allow untrusted_app userdebug_or_eng_prop:file r_file_perms;
+allow untrusted_app vcsFPService_exec:file r_file_perms;
+allow untrusted_app vendor_apex_file:dir r_dir_perms;
+allow untrusted_app vendor_apex_file:file r_file_perms;
+allow untrusted_app vendor_file:file rx_file_perms;
+allow untrusted_app vendor_firmware_file:dir r_dir_perms;
+allow untrusted_app vendor_firmware_file:file r_file_perms;
+allow untrusted_app vendor_service_contexts_file:file r_file_perms;
+allow untrusted_app vendor_toolbox_exec:file r_file_perms;
+allow untrusted_app wifiloader_exec:file r_file_perms;
