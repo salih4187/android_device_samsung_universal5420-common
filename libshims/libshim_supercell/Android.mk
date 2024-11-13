@@ -31,7 +31,7 @@ LOCAL_SRC_FILES := PropertyIntercept.c
 LOCAL_MODULE := libshim_supercell
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-# LOCAL_VENDOR_MODULE := true
+LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
 endif
