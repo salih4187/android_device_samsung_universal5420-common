@@ -187,8 +187,8 @@ PRODUCT_PACKAGES += \
     ueventd.universal5420.rc
 
 # RenderScript
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
+#PRODUCT_PACKAGES += \
+#    android.hardware.renderscript@1.0-impl
 
 # SEC
 PRODUCT_PACKAGES += \
