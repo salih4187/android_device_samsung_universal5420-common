@@ -1,0 +1,5 @@
+wrap.com.supercell.boombeach=LD_PRELOAD=/system/vendor/lib/libshim_supercell.so
+wrap.com.supercell.clashofclans=LD_PRELOAD=/system/vendor/lib/libshim_supercell.so
+wrap.com.supercell.hayday=LD_PRELOAD=/system/vendor/lib/libshim_supercell.so
+wrap.com.supercell.brawlstars=LD_PRELOAD=/system/vendor/lib/libshim_supercell.so
+wrap.com.supercell.clashroyale=LD_PRELOAD=/system/vendor/lib/libshim_supercell.so
