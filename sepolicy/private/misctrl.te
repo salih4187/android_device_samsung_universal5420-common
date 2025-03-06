@@ -1,3 +1,4 @@
 #============= misctrl ==============
 # allow misctrl ota_block_device:blk_file r_file_perms;
 allow misctrl same_process_hal_file:file r_file_perms;
+allow misctrl vendor_file:file r_file_perms;
