@@ -22,7 +22,9 @@ BUILD_BROKEN_DUP_RULES := true
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Audio
+ifneq ($(TARGET_DEVICE), ha3g)
 TARGET_AUDIOHAL_VARIANT := samsung
+endif
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Backlight
