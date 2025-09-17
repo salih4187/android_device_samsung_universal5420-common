@@ -161,7 +161,6 @@ SELINUX_IGNORE_NEVERALLOWS := true
 
 # Shims
 TARGET_LD_SHIM_LIBS += \
-    /vendor/lib/egl/libGLES_mali.so|/vendor/lib/libgutils.so \
     /vendor/lib/libexynoscamera.so|/vendor/lib/libshim_camera.so
 
 # Wifi

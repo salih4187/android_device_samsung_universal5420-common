@@ -213,8 +213,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshim_camera \
-    libgutils
+    libshim_camera
 
 # Touch features
 PRODUCT_PACKAGES += \
