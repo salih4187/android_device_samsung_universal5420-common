@@ -151,11 +151,11 @@ BOARD_USES_GSC_VIDEO := true
 BOARD_USES_ONLY_GSC0_GSC1 := true
 
 # SELinux
-# include device/lineage/sepolicy/exynos/sepolicy.mk
-# BOARD_SEPOLICY_TEE_FLAVOR := mobicore
-# include device/samsung_slsi/sepolicy/sepolicy.mk
-# BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-# SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
+include device/lineage/sepolicy/exynos/sepolicy.mk
+BOARD_SEPOLICY_TEE_FLAVOR := mobicore
+include device/samsung_slsi/sepolicy/sepolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 # For legacy HAL1 camera
 SELINUX_IGNORE_NEVERALLOWS := true
 
