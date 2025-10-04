@@ -53,8 +53,6 @@
 /sys/class/devfreq/exynos5-busfreq-int min_freq      0664 radio system
 /sys/class/devfreq/exynos5-busfreq-int max_freq      0664 radio system
 
-/sys/class/thermal/thermal_zone0 boost_mode          0664 radio system
-
 # USB OTG
 /sys/class/sec/switch       usb_state    0664    radio   system
 /sys/class/sec/switch       chg_type     0664    radio   system
@@ -113,6 +111,7 @@
 
 # USB Driver
 /dev/ttyUSB*              0660   system     usb
+/dev/ttyUSB0              0660   system     radio
 /dev/usb/lp*              0660   system     usb
 
 # Sensorhub IIO
@@ -134,3 +133,6 @@
 /dev/diag                 0660   system     radio
 /dev/ks_hsic_bridge       0660   system     usb
 /dev/efs_hsic_bridge      0660   system     usb
+
+# Fingerprint Sensor
+/dev/esfp0        0660   system     system
