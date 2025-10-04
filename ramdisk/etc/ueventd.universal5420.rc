@@ -136,3 +136,6 @@
 
 # Fingerprint Sensor
 /dev/esfp0        0660   system     system
+
+# sensorhub
+/dev/ssp_data_injection   0660   system     system
