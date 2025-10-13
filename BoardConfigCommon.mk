@@ -176,5 +176,8 @@ WIFI_DRIVER_FW_PATH_STA          := "/system/etc/wifi/bcmdhd_sta.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/system/etc/wifi/bcmdhd_apsta.bin"
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
+# Virtual Display
+BOARD_USES_VIRTUAL_DISPLAY := true
+
 # Inherit from the proprietary version
 include vendor/samsung/universal5420-common/BoardConfigVendor.mk
