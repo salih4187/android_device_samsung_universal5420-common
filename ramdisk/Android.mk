@@ -43,6 +43,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE            := init.universal5420.power.rc
+LOCAL_MODULE_STEM       := init.universal5420.power.rc
 LOCAL_MODULE_TAGS       := optional
 LOCAL_MODULE_CLASS      := ETC
 ifeq (($TARGET_DEVICE), ha3g)
@@ -50,7 +51,7 @@ ifeq (($TARGET_DEVICE), ha3g)
 else
     LOCAL_SRC_FILES         := etc/init.universal5420.power.rc
 endif
-LOCAL_MODULE_PATH       := $(TARGET_OUT_VENDOR)
+LOCAL_MODULE_PATH       := $(TARGET_OUT_VENDOR_ETC)/init/hw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -71,7 +72,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE		:= ueventd.universal5420.rc
-LOCAL_MODULE_STEM   := ueventd.rc
+LOCAL_MODULE_STEM       := ueventd.rc
 LOCAL_MODULE_TAGS	:= optional
 LOCAL_MODULE_CLASS	:= ETC
 LOCAL_SRC_FILES		:= etc/ueventd.universal5420.rc

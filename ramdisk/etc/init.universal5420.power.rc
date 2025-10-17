@@ -40,3 +40,6 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1400000
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 99000
     write /sys/devices/system/cpu/cpufreq/interactive/target_loads "50 1200000:60 1600000:70"
+
+    # Set default to 0
+    write /sys/devices/system/cpu/cpufreq/interactive/param_index 0
