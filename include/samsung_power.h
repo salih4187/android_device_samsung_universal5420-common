@@ -2,7 +2,7 @@
  * Copyright (C) 2016 The CyanogenMod Project
  * Copyright (C) 2020 The LineageOS Project
  *
- * Licensed under the Apache License, Version 2.0 (the "License"
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -34,25 +34,7 @@ static const std::vector<std::string> cpuInteractivePaths = {
     "/sys/devices/system/cpu/cpufreq/interactive"
 };
 
-/* interactive power-save profile */
-#define INTERACTIVE_LOW_MIN_SAMPLE_TIME "40000"
-#define INTERACTIVE_LOW_HISPEED_FREQ "600000"
-#define INTERACTIVE_LOW_GO_HISPEED_LOAD "99"
-#define INTERACTIVE_LOW_TARGET_LOADS "70 600000:70 800000:75 1500000:80 1700000:90"
-#define INTERACTIVE_LOW_ABOVE_HISPEED_DELAY "20000 1000000:80000 1200000:100000 1700000:20000"
-
-/* interactive normal profile */
-#define INTERACTIVE_NORMAL_MIN_SAMPLE_TIME  "79000"
-#define INTERACTIVE_NORMAL_HISPEED_FREQ "1300000"
-#define INTERACTIVE_NORMAL_GO_HISPEED_LOAD "90"
-#define INTERACTIVE_NORMAL_TARGET_LOADS "55 800000:65 1500000:70"
-#define INTERACTIVE_NORMAL_ABOVE_HISPEED_DELAY "19000"
-
-/* interactive high-performance profile */
-#define INTERACTIVE_HIGH_MIN_SAMPLE_TIME  "99000"
-#define INTERACTIVE_HIGH_HISPEED_FREQ "1400000"
-#define INTERACTIVE_HIGH_GO_HISPEED_LOAD "85"
-#define INTERACTIVE_HIGH_TARGET_LOADS  "50 1200000:60 1600000:70"
-#define INTERACTIVE_HIGH_ABOVE_HISPEED_DELAY "19000"
+/* double tap to wake node */
+//#define TAP_TO_WAKE_NODE "/sys/class/sec/tsp/dt2w_enable"
 
 #endif // SAMSUNG_POWER_H
