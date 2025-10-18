@@ -1,4 +1,3 @@
-import /vendor/etc/init/hw/init.universal5420.power.rc
 import /vendor/etc/init/hw/init.universal5420.usb.rc
 import /vendor/etc/init/hw/init.universal5420.wifi.rc
 import /vendor/etc/init/hw/init.samsung.rc
