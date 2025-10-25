@@ -38,12 +38,12 @@ on post-fs-data
     chown bluetooth /sys/class/rfkill/rfkill0/type
 
     # create camera directory
-    mkdir /data/vendor/camera 0770 mediacodec camera
+    mkdir /data/vendor/camera 0770 media camera
 
     # camera server uses files under this directory via a 
     # kernel module for the FIMC, trying chmod since chown 
     # not successful
-    chown mediacodec audio /data/misc/media
+    chown media audio /data/misc/media
     chmod 0776 /data/misc/media
 
     # Permissions for Touchkey
