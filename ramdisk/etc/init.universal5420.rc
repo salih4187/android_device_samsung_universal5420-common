@@ -57,6 +57,9 @@ on post-fs-data
     # KeyDisabler permission
     chown system radio /sys/class/sec/sec_touchkey/touchkey_enabled
     chmod 0664 /sys/class/sec/sec_touchkey/touchkey_enabled
+    
+    chown system system /data/misc/media
+    chmod 0771 /data/misc/media
 
 on boot
     # Assign TCP buffer thresholds to be ceiling value of technology maximums
