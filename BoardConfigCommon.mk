@@ -85,6 +85,8 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Graphics
+OVERRIDE_RS_DRIVER := libRSDriverArm.so
+BOARD_EGL_CFG := device/samsung/universal5420-common/configs/egl.cfg
 BOARD_USES_EXYNOS5_COMMON_GRALLOC := true
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000
 
