@@ -154,13 +154,8 @@ include device/lineage/sepolicy/exynos/sepolicy.mk
 BOARD_SEPOLICY_TEE_FLAVOR := mobicore
 include device/samsung_slsi/sepolicy/sepolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-<<<<<<< HEAD
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
-# For legacy HAL1 camera
-=======
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 # For legacy HAL1 camera and more
->>>>>>> 4f18d19 (Camera: Fix Camera recording)
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Shims
