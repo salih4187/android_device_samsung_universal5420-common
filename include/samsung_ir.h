@@ -15,8 +15,7 @@
  * limitations under the License.
  */
 
-#ifndef SAMSUNG_CONSUMERIR_H
-#define SAMSUNG_CONSUMERIR_H
+#pragma once
 
 #include <android/hardware/ir/1.0/IConsumerIr.h>
 
@@ -49,4 +48,3 @@ static const std::vector<ConsumerIrFreqRange> consumerirFreqs = {
     {.min = 56000, .max = 56000},
 };
 
-#endif  // SAMSUNG_CONSUMERIR_H
