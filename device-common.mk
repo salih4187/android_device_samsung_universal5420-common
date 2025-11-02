@@ -150,7 +150,7 @@ PRODUCT_PACKAGES +=  \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.universal5420
+    android.hardware.power-service.exynos
 
 # Permissions
 PRODUCT_COPY_FILES += \
