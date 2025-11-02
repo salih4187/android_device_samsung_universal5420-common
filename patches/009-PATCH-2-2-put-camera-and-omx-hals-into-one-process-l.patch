@@ -1,0 +1,78 @@
+From c4d8c15c7f07884e207f6fdc466a0e4c6d194c7e Mon Sep 17 00:00:00 2001
+From: Julian Winkler <julian.winkler1@web.de>
+Date: Sun, 17 Mar 2019 15:29:38 +0100
+Subject: [PATCH 2/2] [PATCH 2/2] put camera and omx hals into one process
+ legacy hals can't share buffers between different processes
+
+Change-Id: I24adfe0085a4f0b2ad27389a753273c742d48217
+---
+ services/mediacodec/Android.mk            |  3 ++-
+ services/mediacodec/main_codecservice.cpp | 16 +++++++++++++---
+ 2 files changed, 15 insertions(+), 4 deletions(-)
+
+diff --git a/services/mediacodec/Android.mk b/services/mediacodec/Android.mk
+index 15bc5035b..c1a35ff77 100644
+--- a/services/mediacodec/Android.mk
++++ b/services/mediacodec/Android.mk
+@@ -45,7 +45,8 @@ LOCAL_SHARED_LIBRARIES := \
+     libstagefright_omx \
+     libstagefright_xmlparser \
+     android.hardware.media.omx@1.0 \
+-    android.hidl.memory@1.0
++    android.hidl.memory@1.0 \
++    android.hardware.camera.provider@2.4
+ 
+ LOCAL_MODULE := android.hardware.media.omx@1.0-service
+ LOCAL_MODULE_RELATIVE_PATH := hw
+diff --git a/services/mediacodec/main_codecservice.cpp b/services/mediacodec/main_codecservice.cpp
+index 6a82b1b6b..e5d425c48 100644
+--- a/services/mediacodec/main_codecservice.cpp
++++ b/services/mediacodec/main_codecservice.cpp
+@@ -23,25 +23,27 @@
+ #include <binder/ProcessState.h>
+ #include <cutils/properties.h>
+ #include <hidl/HidlTransportSupport.h>
++#include <hidl/LegacySupport.h>
+ #include <media/stagefright/omx/1.0/Omx.h>
+ #include <media/stagefright/omx/1.0/OmxStore.h>
++#include <android/hardware/camera/provider/2.4/ICameraProvider.h>
+ 
+ #include <dlfcn.h>
+ 
+ using namespace android;
+ 
+ // Must match location in Android.mk.
+-static const char kSystemSeccompPolicyPath[] =
++/*static const char kSystemSeccompPolicyPath[] =
+         "/system/etc/seccomp_policy/mediacodec.policy";
+ static const char kVendorSeccompPolicyPath[] =
+-        "/vendor/etc/seccomp_policy/mediacodec.policy";
++        "/vendor/etc/seccomp_policy/mediacodec.policy";*/
+ 
+ int main(int argc __unused, char** argv)
+ {
+     strcpy(argv[0], "media.codec");
+     LOG(INFO) << "mediacodecservice starting";
+     signal(SIGPIPE, SIG_IGN);
+-    SetUpMinijail(kSystemSeccompPolicyPath, kVendorSeccompPolicyPath);
++    //SetUpMinijail(kSystemSeccompPolicyPath, kVendorSeccompPolicyPath);
+ 
+     android::ProcessState::initWithDriver("/dev/vndbinder");
+     android::ProcessState::self()->startThreadPool();
+@@ -66,5 +68,13 @@ int main(int argc __unused, char** argv)
+         LOG(ERROR) << "Cannot register IOmxStore HAL service.";
+     }
+ 
++    using android::hardware::camera::provider::V2_4::ICameraProvider;
++    using android::hardware::registerPassthroughServiceImplementation;
++    status_t result = registerPassthroughServiceImplementation<ICameraProvider>("legacy/0");
++    if (result != OK) {
++        LOG(FATAL) << "failed to start camera hal service";
++        return result;
++    }
++
+     ::android::hardware::joinRpcThreadpool();
+ }
+-- 
+2.34.1
+

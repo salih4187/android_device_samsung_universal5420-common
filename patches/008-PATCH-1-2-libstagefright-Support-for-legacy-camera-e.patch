@@ -1,0 +1,126 @@
+From b2f9ebda9557ab4d94a625110034a1ed37465a01 Mon Sep 17 00:00:00 2001
+From: Julian Winkler <julian.winkler1@web.de>
+Date: Sun, 17 Mar 2019 15:26:52 +0100
+Subject: [PATCH 1/2] [PATCH 1/2] libstagefright: Support for legacy
+ camera/encoder buffers bring back support for vendor specific buffer support
+ support for kMetadataBufferTypeCameraSource was removed in android 7.0
+
+Change-Id: I75578ac6160e8150c92ebfce8d1657544a66a489
+---
+ media/libmedia/include/media/IOMX.h          |  1 +
+ media/libstagefright/ACodec.cpp              |  3 +++
+ media/libstagefright/CameraSource.cpp        |  2 +-
+ media/libstagefright/omx/OMXNodeInstance.cpp | 23 ++++++++++++++++----
+ 4 files changed, 24 insertions(+), 5 deletions(-)
+
+diff --git a/media/libmedia/include/media/IOMX.h b/media/libmedia/include/media/IOMX.h
+index 7e7c2d23d..c40319b35 100644
+--- a/media/libmedia/include/media/IOMX.h
++++ b/media/libmedia/include/media/IOMX.h
+@@ -67,6 +67,7 @@ public:
+         kPortModeDynamicANWBuffer,      // uses metadata mode kMetadataBufferTypeANWBuffer
+                                         // or kMetadataBufferTypeGrallocSource
+         kPortModeDynamicNativeHandle,   // uses metadata mode kMetadataBufferTypeNativeHandleSource
++        kPortModeCamera,
+         kPortModeDynamicEnd,
+     };
+ 
+diff --git a/media/libstagefright/ACodec.cpp b/media/libstagefright/ACodec.cpp
+index e1132b23b..95cbaccb5 100644
+--- a/media/libstagefright/ACodec.cpp
++++ b/media/libstagefright/ACodec.cpp
+@@ -1760,6 +1760,8 @@ status_t ACodec::configureCodec(
+             } else if (storeMeta == kMetadataBufferTypeANWBuffer ||
+                     storeMeta == kMetadataBufferTypeGrallocSource) {
+                 mode = IOMX::kPortModeDynamicANWBuffer;
++        } else if (storeMeta == kMetadataBufferTypeCameraSource) {
++            mode = IOMX::kPortModeCamera;
+             } else {
+                 return BAD_VALUE;
+             }
+@@ -6123,6 +6125,7 @@ void ACodec::BaseState::onInputBufferFilled(const sp<AMessage> &msg) {
+                 case IOMX::kPortModePresetByteBuffer:
+                 case IOMX::kPortModePresetANWBuffer:
+                 case IOMX::kPortModePresetSecureBuffer:
++                case IOMX::kPortModeCamera:
+                     {
+                         err2 = mCodec->mOMXNode->emptyBuffer(
+                             bufferID, info->mCodecData, flags, timeUs, info->mFenceFd);
+diff --git a/media/libstagefright/CameraSource.cpp b/media/libstagefright/CameraSource.cpp
+index 3bca728d3..d7444cbbe 100644
+--- a/media/libstagefright/CameraSource.cpp
++++ b/media/libstagefright/CameraSource.cpp
+@@ -1425,7 +1425,7 @@ MetadataBufferType CameraSource::metaDataStoredInVideoBuffers() const {
+     // buffer queue.
+     switch (mVideoBufferMode) {
+         case hardware::ICamera::VIDEO_BUFFER_MODE_DATA_CALLBACK_METADATA:
+-            return kMetadataBufferTypeNativeHandleSource;
++            return kMetadataBufferTypeCameraSource;
+         case hardware::ICamera::VIDEO_BUFFER_MODE_BUFFER_QUEUE:
+             return kMetadataBufferTypeANWBuffer;
+         default:
+diff --git a/media/libstagefright/omx/OMXNodeInstance.cpp b/media/libstagefright/omx/OMXNodeInstance.cpp
+index 81d393683..956773bd2 100644
+--- a/media/libstagefright/omx/OMXNodeInstance.cpp
++++ b/media/libstagefright/omx/OMXNodeInstance.cpp
+@@ -811,6 +811,19 @@ status_t OMXNodeInstance::setPortMode(OMX_U32 portIndex, IOMX::PortMode mode) {
+         break;
+     }
+ 
++    case IOMX::kPortModeCamera:
++    {
++        if (portIndex != kPortIndexInput) {
++            CLOG_ERROR(setPortMode, BAD_VALUE,
++                    "%s(%d) mode is only supported on input port", asString(mode), mode);
++            err = BAD_VALUE;
++            break;
++        }
++        MetadataBufferType metaType = kMetadataBufferTypeCameraSource;
++        err = storeMetaDataInBuffers_l(portIndex, OMX_TRUE, &metaType);
++        break;
++    }
++
+     default:
+         CLOG_ERROR(setPortMode, BAD_VALUE, "invalid port mode %d", mode);
+         err = BAD_VALUE;
+@@ -1115,7 +1128,8 @@ status_t OMXNodeInstance::useBuffer(
+     switch (omxBuffer.mBufferType) {
+         case OMXBuffer::kBufferTypePreset: {
+             if (mPortMode[portIndex] != IOMX::kPortModeDynamicANWBuffer
+-                    && mPortMode[portIndex] != IOMX::kPortModeDynamicNativeHandle) {
++                    && mPortMode[portIndex] != IOMX::kPortModeDynamicNativeHandle
++                    && mPortMode[portIndex] != IOMX::kPortModeCamera) {
+                 break;
+             }
+             return useBuffer_l(portIndex, NULL, NULL, buffer);
+@@ -1140,7 +1154,8 @@ status_t OMXNodeInstance::useBuffer(
+         case OMXBuffer::kBufferTypeHidlMemory: {
+                 if (mPortMode[portIndex] != IOMX::kPortModePresetByteBuffer
+                         && mPortMode[portIndex] != IOMX::kPortModeDynamicANWBuffer
+-                        && mPortMode[portIndex] != IOMX::kPortModeDynamicNativeHandle) {
++                        && mPortMode[portIndex] != IOMX::kPortModeDynamicNativeHandle
++                        && mPortMode[portIndex] != IOMX::kPortModeCamera) {
+                     break;
+                 }
+                 sp<IHidlMemory> hidlMemory = mapMemory(omxBuffer.mHidlMemory);
+@@ -1191,7 +1206,7 @@ status_t OMXNodeInstance::useBuffer_l(
+     }
+ 
+     OMX_U32 allottedSize;
+-    if (isMetadata) {
++    if (isMetadata && mMetadataType[portIndex] != kMetadataBufferTypeCameraSource) {
+         if (mMetadataType[portIndex] == kMetadataBufferTypeGrallocSource) {
+             allottedSize = sizeof(VideoGrallocMetadata);
+         } else if (mMetadataType[portIndex] == kMetadataBufferTypeANWBuffer) {
+@@ -1223,7 +1238,7 @@ status_t OMXNodeInstance::useBuffer_l(
+     if (!isOutputGraphicMetadata && (mQuirks & requiresAllocateBufferBit)) {
+         // metadata buffers are not connected cross process; only copy if not meta.
+         buffer_meta = new BufferMeta(
+-                    params, hParams, portIndex, !isMetadata /* copy */, NULL /* data */);
++                    params, hParams, portIndex, !isMetadata || mMetadataType[portIndex] == kMetadataBufferTypeCameraSource/* copy */, NULL /* data */);
+ 
+         err = OMX_AllocateBuffer(
+                 mHandle, &header, portIndex, buffer_meta, allottedSize);
+-- 
+2.34.1
+
