@@ -144,7 +144,8 @@ PRODUCT_PACKAGES += \
 
 # Network
 PRODUCT_PACKAGES +=  \
-    InProcessNetworkStack
+    InProcessNetworkStack \
+    com.android.tethering.inprocess
 
 # Power
 PRODUCT_PACKAGES += \
