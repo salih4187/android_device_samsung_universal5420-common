@@ -1,6 +1,6 @@
 <compatibility-matrix version="2.0" type="framework">
     <hal format="hidl">
-        <name>android.frameworks.cameraservice.service</>
+        <name>android.frameworks.cameraservice.service</name>
         <transport>hwbinder</transport>
         <version>2.1</version>
         <interface>
