@@ -145,8 +145,12 @@ PRODUCT_PACKAGES +=  \
     InProcessNetworkStack
 
 # Power
+#PRODUCT_PACKAGES += \
+#    android.hardware.power-service.exynos
+
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.exynos
+    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-service
 
 # Permissions
 PRODUCT_COPY_FILES += \
