@@ -21,12 +21,10 @@ include $(CLEAR_VARS)
 LOCAL_SHARED_LIBRARIES := \
     liblog \
     libcutils \
-    libgui_vendor \
+    libgui \
     libbinder \
     libutils \
-    libsensor_vendor
-
-LOCAL_C_INCLUDES := frameworks/native/libs/sensor/include
+    libsensor
 
 LOCAL_SRC_FILES := libshim_dmitry_gps.cpp
 LOCAL_MODULE := libshim_dmitry_gps
