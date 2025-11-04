@@ -150,7 +150,7 @@ PRODUCT_PACKAGES +=  \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.universal5420
+    android.hardware.power-service.exynos
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -184,6 +184,7 @@ PRODUCT_PACKAGES += \
     init.samsung.rc \
     init.universal5420.rc \
     init.recovery.universal5420.rc \
+    init.universal5420.power.rc \
     init.universal5420.usb.rc \
     init.universal5420.wifi.rc \
     ueventd.universal5420.rc
