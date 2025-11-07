@@ -67,6 +67,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true \
     debug.stagefright.ccodec=0 \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true
