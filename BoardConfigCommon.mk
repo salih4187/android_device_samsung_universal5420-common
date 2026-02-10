@@ -166,9 +166,6 @@ SELINUX_IGNORE_NEVERALLOWS := true
 TARGET_LD_SHIM_LIBS += \
     /vendor/lib/libexynoscamera.so|/vendor/lib/libshim_camera.so
 
-TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
-    /system/bin/mediaserver=22
-
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI          := true
 BOARD_WLAN_DEVICE                := bcmdhd
