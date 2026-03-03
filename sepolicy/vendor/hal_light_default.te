@@ -7,3 +7,5 @@ allow hal_light_default {
     sysfs_graphics
     sysfs_sec_touchkey
 }:file rw_file_perms;
+allow hal_light_default sysfs:file { getattr open write };
+allow hal_light_default hal_light_default:process signal;

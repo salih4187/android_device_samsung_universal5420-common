@@ -32,3 +32,5 @@ allow init sysfs_input:lnk_file read;
 allow init tmpfs:lnk_file create;
 
 allow init socket_device:sock_file create_file_perms;
+allow init sysfs_batteryinfo:file setattr;
+allow init ota_block_device:blk_file write;

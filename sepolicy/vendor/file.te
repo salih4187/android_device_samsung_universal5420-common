@@ -34,6 +34,9 @@ type proc_sec, fs_type, proc_type;
 type proc_vm, fs_type, proc_type;
 type proc_wifiloader, fs_type, proc_type;
 
+# NFC
+type nfc_fw_file, file_type;
+
 # sysfs types
 type sysfs_ausb, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_camera, fs_type, sysfs_type, mlstrustedobject;

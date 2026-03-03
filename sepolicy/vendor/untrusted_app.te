@@ -1,0 +1,4 @@
+#============= untrusted_app ==============
+allow untrusted_app block_device:dir search;
+allow untrusted_app sysfs_batteryinfo:dir search;
+allow untrusted_app selinuxfs:file read;

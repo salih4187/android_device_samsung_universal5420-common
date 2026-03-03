@@ -41,6 +41,8 @@
 # NFC
 /data/nfc(/.*)?     u:object_r:nfc_data_file:s0
 /data/bcmnfc(/.*)?    u:object_r:nfc_data_file:s0
+/dev/bcm2079x                                             u:object_r:nfc_device:s0
+/system/vendor/firmware/bcm2079x(.*).ncd                u:object_r:nfc_fw_file:s0
 
 # Radio
 /data/misc/radio(/.*)?         u:object_r:radio_data_file:s0
