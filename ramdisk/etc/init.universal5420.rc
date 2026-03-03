@@ -51,7 +51,7 @@ on post-fs-data
     # camera server uses files under this directory via a 
     # kernel module for the FIMC, trying chmod since chown 
     # not successful
-    chown cameraserver audio /data/misc/media
+    chown camera audio /data/misc/media
     chmod 0776 /data/misc/media
 
 on boot
