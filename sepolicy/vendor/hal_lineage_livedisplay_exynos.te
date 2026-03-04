@@ -3,9 +3,11 @@
 allow hal_lineage_livedisplay_exynos {
     sysfs_graphics
     sysfs_mdnie
+    sysfs_mmu
 }:dir search;
 
 allow hal_lineage_livedisplay_exynos {
     sysfs_graphics
     sysfs_mdnie
+    sysfs_mmu
 }:file rw_file_perms;

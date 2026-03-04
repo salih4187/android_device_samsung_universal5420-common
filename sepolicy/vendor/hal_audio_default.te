@@ -1,3 +1,6 @@
 # hal_audio_default.te
 
 allow hal_audio_default rild:unix_stream_socket connectto;
+allow hal_audio_default vendor_file:file execmod;
+allow hal_audio_default system_suspend_hwservice:hwservice_manager find;
+allow hal_audio_default system_suspend_hwservice:binder call;

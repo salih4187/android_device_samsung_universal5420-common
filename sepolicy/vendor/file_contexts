@@ -4,6 +4,7 @@
 
 /(vendor|system/vendor)/bin/mcDriverDaemon    u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/gpsd              u:object_r:gpsd_exec:s0
+/(vendor|system/vendor)/bin/sensorhubservice  u:object_r:sensorhub_exec:s0
 /(vendor|system/vendor)/bin/vcsFPService      u:object_r:vcsFPService_exec:s0
 /(vendor|system/vendor)/bin/wifiloader        u:object_r:wifiloader_exec:s0
 
@@ -113,6 +114,9 @@
 # MIF
 /dev/ehci_power          u:object_r:mif_device:s0
 
+# NFC
+/dev/bcm2079x            u:object_r:nfc_device:s0
+
 # Radio
 /dev/ump                 u:object_r:ump_device:s0
 /dev/umts.*              u:object_r:mif_device:s0
@@ -121,6 +125,13 @@
 
 # Secure
 /dev/s5p-smem            u:object_r:secmem_device:s0
+
+####################################
+# Firmware Files
+#
+
+# NFC
+/system/vendor/firmware/bcm2079x(.*).ncd                u:object_r:nfc_fw_file:s0
 
 ####################################
 # Efs Files
@@ -188,7 +199,7 @@
 /sys/devices/platform/i2c-gpio\.12/i2c-12/12-0020/input/input11(/.*)?    u:object_r:sysfs_homebutton_writable:s0
 
 # Camera
-/sys/devices/virtual/camera/rear/rear_camtype    u:object_r:sysfs_camera:s0
+/sys/devices/virtual/camera(/.*)?                                u:object_r:sysfs_camera:s0
 
 # CPU/input boosters
 /sys/devices/system/cpu/cpufreq/interactive(/.*)?   u:object_r:sysfs_interactive_writable:s0
@@ -198,6 +209,9 @@
 
 # Display
 /sys/devices/platform/s5p-mipi-dsim\.[0-9]+/lcd/panel/mdnie(/.*)?    u:object_r:sysfs_mdnie:s0
+
+# EPEN
+/sys/devices/virtual/sec/sec_epen(/.*)?                 u:object_r:sysfs_sec_epen:s0
 
 # GPS
 /sys/class/sec/gps(/.*)    u:object_r:sysfs_gps:s0
@@ -210,6 +224,12 @@
 /sys/class/input(/.*)?    u:object_r:sysfs_input:s0
 /sys/devices/virtual/input(/.*)?    u:object_r:sysfs_input:s0
 
+# IR
+/sys/devices/virtual/sec/sec_ir(/.*)?    u:object_r:sysfs_sec_ir:s0
+
+# LED
+/sys/devices/virtual/sec/led(/.*)?                      u:object_r:sysfs_sec_led:s0
+
 # LMK
 /sys/module/lowmemorykiller/parameters(/.*)?    u:object_r:sysfs_lowmemorykiller:s0
 
@@ -219,7 +239,6 @@
 /sys/devices/virtual/sec/sec_touchkey/glove_mode        u:object_r:sysfs_sec_touchkey:s0
 /sys/class/sec/sec_touchkey/input/enabled               u:object_r:sysfs_touchscreen_writable:s0
 /sys/class/leds(/.*)?                                   u:object_r:sysfs_leds:s0
-/sys/class/lcd/panel/power_reduce                       u:object_r:sysfs_graphics:s0
 
 # MIF
 #/sys/class/devfreq/exynos5-busfreq-mif(/.*)?   u:object_r:sysfs_mif:s0
@@ -263,12 +282,10 @@
 /sys/class/input/input8/enabled    u:object_r:sysfs_sensors_writable:s0
 /sys/class/input/input9/enabled    u:object_r:sysfs_sensors_writable:s0
 /sys/devices/virtual/sensors/magnetic_sensor(/.*)?    u:object_r:sysfs_sensors:s0
-
 /sys/devices/virtual/sec/switch(/.*)?    u:object_r:sysfs_sec_switch:s0
 
 # Touchscreen
-/sys/devices/virtual/sec/tsp/cmd    u:object_r:sysfs_sec_touchscreen:s0
-/sys/devices/virtual/sec/tsp/cmd_list    u:object_r:sysfs_sec_touchscreen:s0
+/sys/devices/virtual/sec/tsp(/.*)?                      u:object_r:sysfs_sec_touchscreen:s0
 
 # Touchkeys
 /sys/devices/platform/gpio-keys\.0/input/input10(/.*)?     u:object_r:sysfs_sec_touchkey:s0

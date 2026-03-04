@@ -1,8 +1,14 @@
 # priv_app.te
 
-allow priv_app{
+allow priv_app {
     debugfs_ion
     debugfs_mali_mem
 }:file r_file_perms;
+
+allow priv_app hal_memtrack_hwservice:hwservice_manager find;
+
+allow priv_app hal_memtrack_default:binder call;
+
+allow priv_app debugfs_mali:dir read;
 
 dontaudit priv_app sysfs_ausb:file r_file_perms;

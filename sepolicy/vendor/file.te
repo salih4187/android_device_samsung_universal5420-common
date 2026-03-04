@@ -52,6 +52,9 @@ type sysfs_mmu, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_mfc, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_muic, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_multipdp_writable, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_sec_epen, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_sec_ir, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_sec_led, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_sec_touchkey, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_usb_host, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_usb_power, fs_type, sysfs_type, mlstrustedobject;
@@ -61,3 +64,5 @@ type sysfs_sec_switch, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_sensor, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_v4l, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_vibrator_writable, fs_type, sysfs_type, mlstrustedobject;
+
+type nfc_fw_file, file_type;
