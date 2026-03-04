@@ -54,6 +54,27 @@ on post-fs-data
     chown system camera /data/misc/media
     chmod 0771 /data/misc/media
 
+    # Permissions for Touchkey
+    chown system radio /sys/class/sec/sec_touchkey/brightness
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_recent
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_back
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_panel
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_phone
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update_status
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_threshold
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_factory_mode
+    chown system radio /sys/class/sec/sec_touchkey/touch_sensitivity
+    chown system radio /sys/class/sec/sec_touchkey/glove_mode
+    chown system radio /sys/class/sec/sec_touchkey/flip_mode
+    chown system radio /sys/class/sec/sec_touchkey/boost_level
+	chown system radio /sys/class/sec/sec_touchkey/input/enabled
+	chmod 0660 /sys/class/sec/sec_touchkey/input/enabled
+
+    # KeyDisabler permission
+    chown system radio /sys/class/sec/sec_touchkey/touchkey_enabled
+    chmod 0664 /sys/class/sec/sec_touchkey/touchkey_enabled
+
 on boot
     # Reduce reserved lowmem from ~48MB to ~12MB
     write /proc/sys/vm/lowmem_reserve_ratio "128 128"
@@ -124,27 +145,6 @@ on boot
     chown system radio /sys/class/sec/tsp/cmd
 	chown system system /sys/class/sec/tsp/input/enabled
 	chmod 0660 /sys/class/sec/tsp/input/enabled
-
-    # Permissions for Touchkey
-    chown system radio /sys/class/sec/sec_touchkey/brightness
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_recent
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_back
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_panel
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_version_phone
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update_status
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_firm_update
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_threshold
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_factory_mode
-    chown system radio /sys/class/sec/sec_touchkey/touch_sensitivity
-    chown system radio /sys/class/sec/sec_touchkey/glove_mode
-    chown system radio /sys/class/sec/sec_touchkey/flip_mode
-    chown system radio /sys/class/sec/sec_touchkey/boost_level
-	chown system radio /sys/class/sec/sec_touchkey/input/enabled
-	chmod 0660 /sys/class/sec/sec_touchkey/input/enabled
-
-    # KeyDisabler permission
-    chown system radio /sys/class/sec/sec_touchkey/touchkey_enabled
-    chmod 0664 /sys/class/sec/sec_touchkey/touchkey_enabled
 
     # GnssConfiguration doesn't actually look at gps.conf, just the debug file
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
