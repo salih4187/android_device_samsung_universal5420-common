@@ -18,7 +18,6 @@
 
 #include <stdlib.h> // avoid exit warning
 #include <stdio.h>
-#include <linux/ion.h>
 #include <dlfcn.h>
 #include <cutils/log.h>
 
