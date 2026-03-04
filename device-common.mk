@@ -64,7 +64,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl.exynos5420 \
     camera.device@1.0-impl.exynos5420 \
-    camera.universal5420
+    camera.universal5420 \
+    libhwjpeg
 
 # IR
 PRODUCT_PACKAGES += \
