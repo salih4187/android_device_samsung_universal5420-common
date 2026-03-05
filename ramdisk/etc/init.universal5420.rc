@@ -51,8 +51,8 @@ on post-fs-data
     # camera server uses files under this directory via a 
     # kernel module for the FIMC, trying chmod since chown 
     # not successful
-    chown system camera /data/misc/media
-    chmod 0771 /data/misc/media
+    chown cameraserver audio /data/misc/media
+    chmod 0776 /data/misc/media
 
     # Permissions for Touchkey
     chown system radio /sys/class/sec/sec_touchkey/brightness
