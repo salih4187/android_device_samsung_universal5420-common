@@ -1,5 +1,6 @@
 # untrusted_app.te
-
+allow untrusted_app sysfs:dir { open read };
+allow untrusted_app sysfs:file { open read getattr };
 allow untrusted_app block_device:dir search;
 allow untrusted_app sysfs_batteryinfo:file { getattr open read };
 allow untrusted_app selinuxfs:file { getattr open read };
