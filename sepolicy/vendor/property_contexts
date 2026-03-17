@@ -1,5 +1,5 @@
-# camera
+# Camera
 persist.sys.camera                u:object_r:camera_prop:s0
 
-# radio
+# Radio
 persist.ril.      u:object_r:radio_prop:s0

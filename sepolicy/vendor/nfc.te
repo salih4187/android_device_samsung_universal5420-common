@@ -1,3 +1,4 @@
 # nfc.te
 
 allow nfc nfc_fw_file:file rx_file_perms;
+allow hal_nfc_default nfc_data_file:dir { search getattr };

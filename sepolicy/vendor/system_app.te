@@ -21,4 +21,4 @@ allow system_app sysfs_zram:file r_file_perms;
 
 allow system_app vcsFPService:process signull;
 allow system_app sysfs_mmu:dir search;
-allow system_app sysfs_mmu:file { open write };
+allow system_app sysfs_mmu:file { getattr open write };

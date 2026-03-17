@@ -1,4 +1,7 @@
-#============= untrusted_app ==============
+# untrusted_app.te
+
 allow untrusted_app block_device:dir search;
-allow untrusted_app sysfs_batteryinfo:dir search;
-allow untrusted_app selinuxfs:file read;
+allow untrusted_app sysfs_batteryinfo:file { getattr open read };
+allow untrusted_app selinuxfs:file { getattr open read };
+get_prop(untrusted_app, exported_camera_prop)
+
