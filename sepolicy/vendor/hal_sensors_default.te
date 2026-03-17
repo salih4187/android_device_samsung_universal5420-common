@@ -19,4 +19,5 @@ allow hal_sensors_default sysfs_batteryinfo:file { open read };
 allow hal_sensors_default sysfs_backlight_writable:dir search;
 allow hal_sensors_default device:chr_file read;
 allow hal_sensors_default sysfs_graphics:dir search;
+allow hal_sensors_default sysfs_graphics:file { getattr open read write };
 allow hal_sensors_default sysfs_backlight_writable:file { getattr open read write };
