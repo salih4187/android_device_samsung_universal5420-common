@@ -1,0 +1,6 @@
+# cameraserver.te
+
+allow cameraserver sysfs_camera:dir search;
+allow cameraserver sysfs_camera:file r_file_perms;
+
+binder_call(cameraserver, hal_camera_default)

@@ -4,6 +4,7 @@
 
 /(vendor|system/vendor)/bin/mcDriverDaemon    u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/gpsd              u:object_r:gpsd_exec:s0
+/(vendor|system/vendor)/bin/sensorhubservice  u:object_r:sensorhub_exec:s0
 /(vendor|system/vendor)/bin/vcsFPService      u:object_r:vcsFPService_exec:s0
 /(vendor|system/vendor)/bin/wifiloader        u:object_r:wifiloader_exec:s0
 
@@ -191,7 +192,7 @@
 /sys/devices/platform/i2c-gpio\.12/i2c-12/12-0020/input/input11(/.*)?    u:object_r:sysfs_homebutton_writable:s0
 
 # Camera
-/sys/devices/virtual/camera/rear/rear_camtype    u:object_r:sysfs_camera:s0
+/sys/devices/system/cpu(/.*)?    u:object_r:sysfs_camera:s0
 
 # CPU/input boosters
 /sys/devices/system/cpu/cpufreq/interactive(/.*)?   u:object_r:sysfs_interactive_writable:s0
@@ -201,6 +202,9 @@
 
 # Display
 /sys/devices/platform/s5p-mipi-dsim\.[0-9]+/lcd/panel/mdnie(/.*)?    u:object_r:sysfs_mdnie:s0
+
+# EPEN
+/sys/devices/virtual/sec/sec_epen(/.*)?                 u:object_r:sysfs_sec_epen:s0
 
 # GPS
 /sys/class/sec/gps(/.*)    u:object_r:sysfs_gps:s0

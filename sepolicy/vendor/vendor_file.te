@@ -1,0 +1,2 @@
+# vendor_file.te
+allow vendor_file sensorhub_exec:file { execute execute_no_trans };
