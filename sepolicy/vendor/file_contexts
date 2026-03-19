@@ -192,7 +192,7 @@
 /sys/devices/platform/i2c-gpio\.12/i2c-12/12-0020/input/input11(/.*)?    u:object_r:sysfs_homebutton_writable:s0
 
 # Camera
-/sys/devices/system/cpu(/.*)?    u:object_r:sysfs_camera:s0
+/sys/devices/virtual/camera(/.*)?    u:object_r:sysfs_camera:s0
 
 # CPU/input boosters
 /sys/devices/system/cpu/cpufreq/interactive(/.*)?   u:object_r:sysfs_interactive_writable:s0
