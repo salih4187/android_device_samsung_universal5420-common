@@ -1,2 +1,2 @@
-allow hal_nfc_default nfc_data_file:dir search;
-allow hal_nfc_default nfc_data_file:file read;
+allow hal_nfc_default nfc_data_file:dir { add_name write search };
+allow hal_nfc_default nfc_data_file:file { create read };
