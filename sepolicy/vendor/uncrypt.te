@@ -1,0 +1,4 @@
+# uncrypt.te
+
+allow uncrypt ota_block_device:blk_file rw_file_perms;
+allow uncrypt ota_block_device:dir search;
