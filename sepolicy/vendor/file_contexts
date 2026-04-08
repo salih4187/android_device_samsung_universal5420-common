@@ -125,6 +125,9 @@
 # Secure
 /dev/s5p-smem            u:object_r:secmem_device:s0
 
+# Sensors
+/dev/shtc1_sensor        u:object_r:sensor_device:s0
+
 ####################################
 # Efs Files
 #
