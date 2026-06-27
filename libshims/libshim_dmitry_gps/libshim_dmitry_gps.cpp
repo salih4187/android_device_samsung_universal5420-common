@@ -155,7 +155,7 @@ void _ZN7android13SensorManagerC1Ev(void *sensorMgr)
  *           sources list default values for these params as an empty string
  *           and 0. So we'll craft the same call here.
  */
-void _ZN7android13SensorManager16createEventQueueEv(void **retVal, void *sensorMgr)
+/* void _ZN7android13SensorManager16createEventQueueEv(void **retVal, void *sensorMgr)
 {
     void *string;
 
@@ -163,7 +163,7 @@ void _ZN7android13SensorManager16createEventQueueEv(void **retVal, void *sensorM
     _ZN7android13SensorManager16createEventQueueENS_7String8Ei(retVal, sensorMgr, &string, 0);
     _ZN7android7String8D1Ev(&string);
 }
-
+*/
 /*
  * FUNCTION: CRYPTO_malloc(uint32_t sz, const char *file, uint32_t line)
  * USE:      INTERPOSE: Allocate memory
