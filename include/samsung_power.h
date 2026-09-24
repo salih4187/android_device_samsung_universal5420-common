@@ -15,7 +15,8 @@
  * limitations under the License.
  */
 
-#pragma once
+#ifndef SAMSUNG_POWER_H
+#define SAMSUNG_POWER_H
 
 /*
  * Board specific nodes
@@ -33,3 +34,4 @@ static const std::vector<std::string> cpuInteractivePaths = {
     "/sys/devices/system/cpu/cpufreq/interactive"
 };
 
+#endif // SAMSUNG_POWER_H
